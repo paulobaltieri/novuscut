@@ -1,0 +1,23 @@
+.login-card {
+    width: 400px;
+    height: 460px;               
+    padding: 20px;          
+    margin: 50px auto;  
+    align-items: center;
+    justify-content: center;    
+}
+.login-avatar{
+    display: flex;
+    border-radius: 100px;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.login-container{
+    text-align: center;
+   display: block;
+}
+.login-user{
+    width: 300px;
+}
