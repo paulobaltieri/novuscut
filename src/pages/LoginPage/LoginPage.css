@@ -1,23 +1,33 @@
-.login-card {
-    width: 400px;
-    height: 460px;               
-    padding: 20px;          
-    margin: 50px auto;  
-    align-items: center;
-    justify-content: center;    
-}
-.login-avatar{
-    display: flex;
-    border-radius: 100px;
-    width: 200px;
-    height: 200px;
+body {
+    background-color: #19315e
+
+  }
+.login-avatar {
     margin: auto;
-    margin-bottom: 20px;
+    margin-top: 40px;
+    margin-bottom: 50px;
 }
-.login-container{
-    text-align: center;
-   display: block;
+
+.login-card {
+    width: 350px;
+    height: 520px;
+    margin: 30px auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 80px;
 }
-.login-user{
+
+.login-user,
+.login-password {
     width: 300px;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
 }
