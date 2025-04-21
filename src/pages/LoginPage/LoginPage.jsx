@@ -14,17 +14,17 @@ export default function LoginPage() {
 
   const handleLogin = () => {
     if (!user) {
-      toast.warning("O campo USUARIO não pode estar vazio!");
+      toast.warning("O campo USUÁRIO é obrigatório.");
       return;
     } else if (user.length < 5) {
-      toast.warn("O campo Usuario não pode conter menos de 5 caracteres!");
+      toast.warn("O nome de USUÁRIO deve ter pelo menos 5 caracteres.");
       return;
     }
     if (!password) {
-      toast.warning("O campo SENHA não pode estar vazio");
+      toast.warning("O campo SENHA é obrigatório.");
       return;
     } else if (password.length < 5) {
-      toast.warning("O campo SENHA não pode ter menos de 5 catacteres!");
+      toast.warning("A SENHA deve ter no mínimo 6 caracteres");
     }
   };
 
