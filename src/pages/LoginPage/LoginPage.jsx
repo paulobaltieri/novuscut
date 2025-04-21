@@ -49,6 +49,7 @@ export default function LoginPage() {
           label="Senha"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          type="password"
           size="small"
         />
         <Button
