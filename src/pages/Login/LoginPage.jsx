@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Card from "@mui/material/Card";
 import Avatar from "@mui/material/Avatar";
 import avatarPerson from "../../images/man01.png";
-import "../LoginPage/LoginPage.css";
+import "../Login/LoginPage.css";
 import { TextField } from "@mui/material";
 import Button from "@mui/material/Button";
 import { toast, ToastContainer } from "react-toastify";
