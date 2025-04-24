@@ -1,10 +1,20 @@
-body {
-    background-color: #19315e
-
+.login-background {
+    background-color: #19315e; /* sua cor desejada */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
   }
+  
+  
 .login-avatar {
     margin: auto;
-    margin-top: 40px;
+    margin-top: 30px;
     margin-bottom: 50px;
 }
 
@@ -17,7 +27,7 @@ body {
     justify-content: center;
     border-radius: 12px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    margin-top: 80px;
+    margin-top: 30px;
 }
 
 .login-user,

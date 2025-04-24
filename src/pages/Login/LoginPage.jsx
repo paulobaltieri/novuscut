@@ -29,38 +29,40 @@ export default function LoginPage() {
   };
 
   return (
-    <Card className="login-card">
-      <Avatar
-        className="login-avatar"
-        alt="Remy Sharp"
-        src={avatarPerson}
-        sx={{ width: "190px", height: "190px" }}
-      />
-      <div className="login-container">
-        <TextField
-          className="login-user"
-          label="Usuário"
-          value={user}
-          onChange={(e) => setUser(e.target.value)}
-          size="small"
+    <div className="login-background">
+      <Card className="login-card">
+        <Avatar
+          className="login-avatar"
+          alt="Remy Sharp"
+          src={avatarPerson}
+          sx={{ width: "190px", height: "190px" }}
         />
-        <TextField
-          className="login-password"
-          label="Senha"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          type="password"
-          size="small"
-        />
-        <Button
-          variant="contained"
-          sx={{ backgroundColor: "#19315e", width: "300px" }}
-          onClick={handleLogin}
-        >
-          Entrar
-        </Button>
-        <ToastContainer />
-      </div>
-    </Card>
+        <div className="login-container">
+          <TextField
+            className="login-user"
+            label="Usuário"
+            value={user}
+            onChange={(e) => setUser(e.target.value)}
+            size="small"
+          />
+          <TextField
+            className="login-password"
+            label="Senha"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            type="password"
+            size="small"
+          />
+          <Button
+            variant="contained"
+            sx={{ backgroundColor: "#19315e", width: "300px" }}
+            onClick={handleLogin}
+          >
+            Entrar
+          </Button>
+          <ToastContainer />
+        </div>
+      </Card>
+    </div>
   );
 }
