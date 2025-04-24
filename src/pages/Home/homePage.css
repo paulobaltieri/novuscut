@@ -1,3 +1,18 @@
-.papelParede{
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* espaço entre os cards */
+    padding: 2rem;
+  }
+  
+  .custom-card {
+    width: 250px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
     background-color: white;
-}
+    padding: 1rem;
+  }
+  
