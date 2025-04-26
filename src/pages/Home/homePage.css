@@ -1,13 +1,12 @@
 .card-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* espaço entre os cards */
-    padding: 2rem;
+    width: '100%';
+    display: 'grid';
+    gap: 2,
   }
   
   .custom-card {
-    width: 250px;
-    height: 150px;
+    width: 270px;
+    height: 90px;
     display: flex;
     justify-content: center;
     align-items: center;
