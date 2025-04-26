@@ -5,38 +5,39 @@ import {
   Card,
   CardActionArea,
   CardContent,
-  CardMedia,
   Typography,
 } from "@mui/material";
 import CutIcon from "@mui/icons-material/ContentCut";
 import Calendar from "@mui/icons-material/CalendarMonth";
-import VisibilityIcon from "@mui/icons-material/Visibility";
+import Face6OutlinedIcon from '@mui/icons-material/Face6Outlined';
 import AttachMoney from "@mui/icons-material/AttachMoney";
+
+const color = ["#74c0fc", "#0dcb91", "#ffd43b", "#40e0d0"];
 
 const cards = [
   {
     id: 1,
-    title: "Titutlo",
+    title: "Atendimentos",
     description: "Corte 1",
-    icon: <CutIcon fontSize="large" />,
+    icon: <CutIcon sx={{ fontSize: 55 }} />,
   },
   {
     id: 2,
     description: "Corte 2",
-    title: "Titutlo",
-    icon: <AttachMoney fontSize="large" />,
+    title: "Faturamente",
+    icon: <AttachMoney sx={{ fontSize: 55 }} />,
   },
   {
     id: 3,
     description: "Corte 3",
-    title: "Titutlo",
-    icon: <Calendar fontSize="large" />,
+    title: "Agendamentos",
+    icon: <Calendar sx={{ fontSize: 55 }} />,
   },
   {
     id: 4,
     description: "Corte 4",
-    title: "Titutlo",
-    icon: <Calendar fontSize="large" />,
+    title: "Clientes",
+    icon: <Face6OutlinedIcon sx={{ fontSize: 55}} />,
   },
 ];
 
@@ -55,22 +56,28 @@ export default function Home() {
           padding: 1,
         }}
       >
-        {cards.map((cards) => (
-          <Card key={cards.id} sx={{ height: "100%", width: "250px" }}>
+        {cards.map((cards, index) => (
+          <Card
+            key={cards.id}
+            sx={{
+              height: "100%",
+              width: "270px",
+              backgroundColor: color[index],
+            }}
+          >
             <CardActionArea>
-              <CardMedia height="240" image={cards.icon} />
-            </CardActionArea>
-            <CardContent>
-              <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                {cards.icon}
-                <Typography gutterBottom variant="h6" component="div">
-                  {cards.title}
+              <CardContent>
+                <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                  {cards.icon}
+                  <Typography gutterBottom variant="h6" component="div">
+                    {cards.title}
+                  </Typography>
+                </Box>
+                <Typography variant="body2" color="text.secondary">
+                  {cards.description}
                 </Typography>
-              </Box>
-              <Typography variant="body2" color="text.secondary">
-                {cards.description}
-              </Typography>
-            </CardContent>
+              </CardContent>
+            </CardActionArea>
           </Card>
         ))}
       </Box>
