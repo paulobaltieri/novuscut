@@ -6,11 +6,15 @@ import "../Login/LoginPage.css";
 import { TextField } from "@mui/material";
 import Button from "@mui/material/Button";
 import { toast, ToastContainer } from "react-toastify";
+import Progressbar from "../../components/ProgressBar/progressbar";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
 
   const handleLogin = () => {
     if (!user) {
@@ -25,7 +29,31 @@ export default function LoginPage() {
       return;
     } else if (password.length < 5) {
       toast.warning("A SENHA deve ter no mínimo 6 caracteres");
+      return;
     }
+
+    // Usando o fetch para fazer a requisição de login
+    fetch("http://localhost:8080/api/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ username: user, password: password }),
+    })
+      .then((response) => {
+        if (response.status === 200) {
+          toast.success("Login bem-sucedido!");
+          navigate("/home");
+        }
+        if (response.status !== 200) {
+          toast.error("USUARIO ou SENHA inválidos!");
+        }
+      })
+      .catch((error) => {
+        // Erro
+        console.error("Erro ao fazer login:", error);
+        toast.error("Erro ao tentar fazer login!");
+      });
   };
 
   return (
