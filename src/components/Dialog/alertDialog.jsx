@@ -14,7 +14,7 @@ export default function AlertDialog({ open, onClose }) {
 
   return (
     <div>
-      <Dialog open={open} onClose={onClose}>
+      <Dialog open={open}>
         <DialogTitle>{"Alerta de confirmação"}</DialogTitle>
         <DialogContent>
           <DialogContentText>Tem certeza que deseja sair?</DialogContentText>
