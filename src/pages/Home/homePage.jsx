@@ -49,7 +49,7 @@ export default function Home() {
   return (
     < div>
       <Navbar />
-      <Card sx={{backgroundColor:"red",width:"81%",minHeight: "10vh",margin:"10px auto"}}>
+      <Card sx={{width:"81%",minHeight: "10vh",margin:"10px auto"}}>
         <Box
           sx={{
             display: "flex",

@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 export default function AlertDialog({ open, onClose }) {
   const navigate = useNavigate();
   function ReturnLoginPage() {
-    navigate("/");
+    navigate("/login");
   }
 
   return (

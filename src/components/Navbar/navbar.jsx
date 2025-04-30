@@ -47,6 +47,9 @@ export default function ButtonAppBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             NovusCut
           </Typography>
+          <Button color="inherit ">
+            teste
+          </Button>
           <Button color="inherit" onClick={irParaHome}>
             Login
           </Button>
