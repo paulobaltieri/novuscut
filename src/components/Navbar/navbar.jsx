@@ -8,11 +8,17 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import AlertDialog from "../Dialog/alertDialog";
+import MenuDrawer from "../Drawer/drawer";
 
 export default function ButtonAppBar() {
   const navigate = useNavigate();
 
   const [openDialog, setOpenDialog] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  function openMenu() {
+    setOpen(true);
+  }
 
   function handleOpenDialog() {
     setOpenDialog(true);
@@ -41,15 +47,14 @@ export default function ButtonAppBar() {
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
+            onClick={openMenu}
           >
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             NovusCut
           </Typography>
-          <Button color="inherit ">
-            teste
-          </Button>
+          <Button color="inherit">button 1</Button>
           <Button color="inherit" onClick={irParaHome}>
             Login
           </Button>
@@ -58,6 +63,7 @@ export default function ButtonAppBar() {
           </Button>
         </Toolbar>
       </AppBar>
+      <MenuDrawer  open={open} setOpen={setOpen}/>
       <AlertDialog open={openDialog} onClose={handleCloseDialog} />
     </Box>
   );

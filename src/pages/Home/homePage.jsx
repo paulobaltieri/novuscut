@@ -16,6 +16,7 @@ import Calendar from "@mui/icons-material/CalendarMonth";
 import Face6OutlinedIcon from "@mui/icons-material/Face6Outlined";
 import AttachMoney from "@mui/icons-material/AttachMoney";
 
+
 const color = ["#74c0fc", "#0dcb91", "#ffd43b", "#40e0d0"];
 
 const cards = [
