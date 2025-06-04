@@ -1,0 +1,17 @@
+.card-container {
+    width: '100%';
+    display: 'grid';
+    gap: 2,
+  }
+  
+  .custom-card {
+    width: 270px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    background-color: white;
+    padding: 1rem;
+  }
+  
