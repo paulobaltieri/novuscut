@@ -6,18 +6,19 @@ import "../Login/LoginPage.css";
 import { TextField } from "@mui/material";
 import Button from "@mui/material/Button";
 import { toast, ToastContainer } from "react-toastify";
-import Backdrop from "../../components/Backdrop/backdrop";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
+
+ 
 
   const navigate = useNavigate();
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
+    // Validação dos campos
     if (!user) {
       toast.warning("O campo USUÁRIO é obrigatório.");
       return;
@@ -32,27 +33,26 @@ export default function LoginPage() {
       toast.warning("A SENHA deve ter no mínimo 6 caracteres");
       return;
     }
-    setLoading(true);
-    // Usando o fetch para fazer a requisição de login
+
+    // Envio da requisição com os campos 'usuario' e 'senha'
     fetch("http://localhost:8080/api/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username: user, password: password }),
+      body: JSON.stringify({ username: user, password: password }), // Mudança: 'username' e 'password'
     })
       .then((response) => {
-        if (response.status === 200) {
-          toast.success("Login bem-sucedido!");
-          setTimeout(() => navigate("/home"), 1000);
-        }
 
-        if (response.status !== 200) {
-          toast.error("USUARIO ou SENHA inválidos!");
+        if (response.status === 200) {
+          toast.success(`Bem vindo ${user}`);
+          setTimeout(() => navigate("/home"), 2000);
+          localStorage.setItem("Usuario Logado",user);
+        } else {
+          toast.error("USUÁRIO ou SENHA inválidos!");
         }
       })
       .catch((error) => {
-        // Erro
         console.error("Erro ao fazer login:", error);
         toast.error("Erro ao tentar fazer login!");
       });
@@ -91,7 +91,6 @@ export default function LoginPage() {
             Entrar
           </Button>
           <ToastContainer />
-          <Backdrop open={loading} />
         </div>
       </Card>
     </div>
