@@ -1,5 +1,5 @@
 // src/components/Drawer/drawer.js
-import { Drawer, Box, Typography, ListItemButton, patch } from "@mui/material";
+import { Drawer, Box, Typography, ListItemButton} from "@mui/material";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -19,9 +19,9 @@ export default function MenuDrawer({ open, setOpen }) {
   };
   const buttonsIconList = [
     { label: "Pagina Inicial", icon: <Home /> , patch:"/home"},
-    { label: "Cliente", icon: <Face6TwoToneIcon />, patch:"" },
+    { label: "Cliente", icon: <Face6TwoToneIcon />, patch:"/clients" },
     { label: "Barbeiro", icon: <Barbeiro />, patch:"/barber"},
-    { label: "Agendamentos", icon: <CalendarMonth /> },
+    { label: "Agendamentos", icon: <CalendarMonth />},
   ];
 
   return (
