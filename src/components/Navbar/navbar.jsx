@@ -7,12 +7,9 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuDrawer from "../Drawer/drawer";
-import UserInfo from "../userInfo/userInfo";
 
 export default function ButtonAppBar() {
   const [open, setOpen] = useState(false);
-
-  localStorage.getItem("Usuario Logado");
 
   function openMenu() {
     setOpen(true);
@@ -75,7 +72,6 @@ export default function ButtonAppBar() {
         </AppBar>
         <MenuDrawer open={open} setOpen={setOpen} />
       </Box>
-      <UserInfo />
     </>
   );
 }

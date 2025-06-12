@@ -1,5 +1,5 @@
 import React from "react";
-import BtnUserConfig from "./BtnUserConfig";
+import BtnUserConfig from "../../components/userInfo/BtnUserConfig";
 
 export default function UserInfo() {
   const userBar = localStorage.getItem("Usuario Logado");
@@ -23,7 +23,7 @@ export default function UserInfo() {
           textAlign: "right",
           paddingRight: "20px",
           margin: "12px",
-          marginBottom: "20px",
+          marginBottom: "12px",
           fontSize: "16px",
         }}
       >

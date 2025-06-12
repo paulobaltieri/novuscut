@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../../components/Navbar/navbar";
-import { Card } from "@mui/material";
+import { Card, Typography } from "@mui/material";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -9,6 +9,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import "../../pages/Clients/ClientsPage.css";
+import "../../components/Navbar/navbar";
 
 function createData(id, name, email, telefone, foto, status) {
   return { id, name, email, telefone, foto, status };
@@ -43,36 +44,42 @@ const rows = [
 
 export default function ClientsListTable() {
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Id</TableCell>
-            <TableCell align="right">Nome</TableCell>
-            <TableCell align="right">Email</TableCell>
-            <TableCell align="right">Telefone</TableCell>
-            <TableCell align="right">Foto</TableCell>
-            <TableCell align="right">Status</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.id}
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-            >
-              <TableCell component="th" scope="row">
-                {row.id}
-              </TableCell>
-              <TableCell align="right">{row.name}</TableCell>
-              <TableCell align="right">{row.email}</TableCell>
-              <TableCell align="right">{row.telefone}</TableCell>
-              <TableCell align="right">{row.foto}</TableCell>
-              <TableCell align="right">{row.status}</TableCell>
+    <>
+      <Navbar />
+      <Typography variant="h4" paddingLeft={"10px"} marginBottom={"10px"}>
+          Titulo Cliente
+      </Typography>
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableHead>
+            <TableRow >
+              <TableCell>Id</TableCell>
+              <TableCell align="right">Nome</TableCell>
+              <TableCell align="right">Email</TableCell>
+              <TableCell align="right">Telefone</TableCell>
+              <TableCell align="right">Foto</TableCell>
+              <TableCell align="right">Status</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {rows.map((row) => (
+              <TableRow
+                key={row.id}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                <TableCell component="th" scope="row">
+                  {row.id}
+                </TableCell>
+                <TableCell align="right">{row.name}</TableCell>
+                <TableCell align="right">{row.email}</TableCell>
+                <TableCell align="right">{row.telefone}</TableCell>
+                <TableCell align="right">{row.foto}</TableCell>
+                <TableCell align="right">{row.status}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </>
   );
 }

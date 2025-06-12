@@ -15,7 +15,7 @@ import CutIcon from "@mui/icons-material/ContentCut";
 import Calendar from "@mui/icons-material/CalendarMonth";
 import Face6OutlinedIcon from "@mui/icons-material/Face6Outlined";
 import AttachMoney from "@mui/icons-material/AttachMoney";
-
+import TimeOfDay from "../../components/TimeOfDay/TimeOfDay";
 
 const color = ["#74c0fc", "#0dcb91", "#ffd43b", "#40e0d0"];
 
@@ -48,9 +48,10 @@ const cards = [
 
 export default function Home() {
   return (
-    < div>
+    <div>
       <Navbar />
-      <Card sx={{width:"81%",minHeight: "10vh",margin:"10px auto"}}>
+      <TimeOfDay />
+      <Card sx={{ width: "90%", minHeight: "10vh", margin: "10px auto" }}>
         <Box
           sx={{
             display: "flex",
