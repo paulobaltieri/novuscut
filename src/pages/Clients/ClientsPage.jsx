@@ -1,6 +1,12 @@
 import React from "react";
 import Navbar from "../../components/Navbar/navbar";
-import { Card, Typography } from "@mui/material";
+import {
+  InputAdornment,
+  Card,
+  TextField,
+  Typography,
+  Button,
+} from "@mui/material";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -8,6 +14,8 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import SearchIcon from "@mui/icons-material/Search";
+
 import "../../pages/Clients/ClientsPage.css";
 import "../../components/Navbar/navbar";
 
@@ -46,13 +54,42 @@ export default function ClientsListTable() {
   return (
     <>
       <Navbar />
-      <Typography variant="h4" paddingLeft={"10px"} marginBottom={"10px"}>
-          Titulo Cliente
-      </Typography>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          paddingLeft: "10px",
+          marginBottom: "10px",
+          marginTop: "20px",
+          justifyContent: "space-between",
+          margin: "20px",
+        }}
+      >
+        <Typography variant="h4">Titulo Cliente</Typography>
+        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <TextField
+            className="searchText"
+            hiddenLabel
+            id="outlined-size-small"
+            size="small"
+            placeholder="Pesquisar"
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon />
+                </InputAdornment>
+              ),
+            }}
+          />
+          <Button variant="contained" style={{ backgroundColor: "#2c4478" }}>
+            Pesquisar
+          </Button>
+        </div>{" "}
+      </div>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
-            <TableRow >
+            <TableRow>
               <TableCell>Id</TableCell>
               <TableCell align="right">Nome</TableCell>
               <TableCell align="right">Email</TableCell>
