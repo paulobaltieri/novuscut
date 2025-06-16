@@ -4,9 +4,12 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuDrawer from "../Drawer/drawer";
+import IconButton from "@mui/material/IconButton";
+import EmailIcon from "@mui/icons-material/EmailSharp";
+import NotificationIcon from "@mui/icons-material/NotificationsSharp";
+import SettingsIcon from "@mui/icons-material/SettingsSharp";
 
 export default function ButtonAppBar() {
   const [open, setOpen] = useState(false);
@@ -38,36 +41,15 @@ export default function ButtonAppBar() {
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               NovusCut
             </Typography>
-            <Button
-              color="inherit"
-              sx={{
-                "&:hover": {
-                  backgroundColor: "#2c4478"
-                },
-              }}
-            >
-              button1
-            </Button>
-            <Button
-              color="inherit"
-              sx={{
-                "&:hover": {
-                  backgroundColor: "#2c4478"
-                },
-              }}
-            >
-              Clientes
-            </Button>
-            <Button
-              color="inherit"
-              sx={{
-                "&:hover": {
-                  backgroundColor: "#2c4478"
-                },
-              }}
-            >
-              Sobre
-            </Button>
+            <IconButton aria-label="Delete" size="large">
+              <EmailIcon style={{ color: "white" }} />
+            </IconButton>
+            <IconButton aria-label="Delete" size="large">
+              <NotificationIcon style={{ color: "white" }} />
+            </IconButton>
+            <IconButton aria-label="Delete" size="large">
+              <SettingsIcon style={{ color: "white" }} />
+            </IconButton>
           </Toolbar>
         </AppBar>
         <MenuDrawer open={open} setOpen={setOpen} />
