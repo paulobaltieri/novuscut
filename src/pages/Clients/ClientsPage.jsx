@@ -1,12 +1,6 @@
 import React from "react";
 import Navbar from "../../components/Navbar/navbar";
-import {
-  InputAdornment,
-  Card,
-  TextField,
-  Typography,
-  Button,
-} from "@mui/material";
+import { InputAdornment, TextField, Typography, Button } from "@mui/material";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -15,7 +9,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import SearchIcon from "@mui/icons-material/Search";
-
+import { useState } from "react";
 import "../../pages/Clients/ClientsPage.css";
 import "../../components/Navbar/navbar";
 
@@ -51,6 +45,16 @@ const rows = [
 ];
 
 export default function ClientsListTable() {
+  const [valorPesquisa, setValorPesquisa] = useState("");
+  const [pesquisa, setPesquisa] = useState(rows);
+
+  const consulta = () => {
+    const resultado = rows.filter((row) => {
+      return row.name.toLowerCase().includes(valorPesquisa.toLocaleLowerCase());
+    });
+    setPesquisa(resultado)
+  };
+
   return (
     <>
       <Navbar />
@@ -73,6 +77,7 @@ export default function ClientsListTable() {
             id="outlined-size-small"
             size="small"
             placeholder="Pesquisar"
+            onChange={(e) => setValorPesquisa(e.target.value)}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
@@ -81,7 +86,11 @@ export default function ClientsListTable() {
               ),
             }}
           />
-          <Button variant="contained" style={{ backgroundColor: "#2c4478" }}>
+          <Button
+            variant="contained"
+            style={{ backgroundColor: "#2c4478" }}
+            onClick={consulta}
+          >
             Pesquisar
           </Button>
         </div>{" "}
@@ -99,7 +108,7 @@ export default function ClientsListTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row) => (
+            {pesquisa.map((row) => (
               <TableRow
                 key={row.id}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
