@@ -1,25 +1,40 @@
 import React from "react";
 import Navbar from "../../components/Navbar/navbar";
-import { Avatar, Box, Card, CardContent, Typography} from "@mui/material";
-import BarberAvatar from "../../images/man02.png"
+import { Avatar, Box, Card, CardContent, Typography } from "@mui/material";
+import BarberMale from "../../images/man01.png"
+import BarberMale02 from "../../images/man02.png"
+import BarberFemale from "../../images/woamn02.png"
 
-const createCardBarber = (nome, age, sexo, disponibilidade) => {
-  return { nome, age, sexo, disponibilidade }
+
+const avatarList = [BarberMale, BarberMale02, BarberFemale]
+const CreateCardBarber = (foto, nome, age, sexo, disponibilidade) => {
+  return { foto, nome, age, sexo, disponibilidade }
 }
+
 const barberCad = [
-  createCardBarber(
+  CreateCardBarber(
+    { BarberMale },
     "Isaac",
     25,
     "Masculino",
     "Manhã"
   ),
 
-  createCardBarber(
+  CreateCardBarber(
+    { BarberMale02},
     "Paulo",
     36,
     "Masculino",
     "Tarde"
+  ),
+  CreateCardBarber(
+     { BarberFemale },
+    "Jeruza Zuleiko",
+    24,
+    "Feminino",
+    "Manhã"
   )
+
 ]
 
 export default function BarberList() {
@@ -35,9 +50,9 @@ export default function BarberList() {
       >
         {barberCad.map((barber, index) => {
           return (
-            <Card key={index} sx={{ backgroundColor: "red",paddingTop:"30px", width: "230px" , height:"290px"}}>
+            <Card key={index} sx={{ backgroundColor: "red", paddingTop: "30px", width: "230px", height: "290px" }}>
               <Avatar
-                src={BarberAvatar}
+                src={avatarList[index]}
                 style={{ width: "150px", height: "150px", margin: "auto" }}
               />
               <CardContent sx={{ textAlign: "center" }}>
