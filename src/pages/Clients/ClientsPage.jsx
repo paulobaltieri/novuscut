@@ -13,8 +13,8 @@ import { useState } from "react";
 import "../../pages/Clients/ClientsPage.css";
 import "../../components/Navbar/navbar";
 
-function createData(id, name, email, telefone, foto, status) {
-  return { id, name, email, telefone, foto, status };
+function createData(id, name, email, telefone) {
+  return { id, name, email, telefone };
 }
 
 const rows = [
@@ -23,24 +23,18 @@ const rows = [
     "Paulo Baltieri",
     "baltieri@baltieri.com",
     "(71)9899-9878u",
-    "teste",
-    "Disponivel"
   ),
   createData(
     "02",
     "Diego Baltieri",
     "baltieri@baltieri.com",
     "(71)9899-9878u",
-    "teste",
-    "Disponivel"
   ),
   createData(
     "03",
     "Debora",
     "baltieri@baltieri.com",
     "(71)9899-9878u",
-    "teste",
-    "Disponivel"
   ),
 ];
 
@@ -103,8 +97,6 @@ export default function ClientsListTable() {
               <TableCell align="right">Nome</TableCell>
               <TableCell align="right">Email</TableCell>
               <TableCell align="right">Telefone</TableCell>
-              <TableCell align="right">Foto</TableCell>
-              <TableCell align="right">Status</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -119,8 +111,6 @@ export default function ClientsListTable() {
                 <TableCell align="right">{row.name}</TableCell>
                 <TableCell align="right">{row.email}</TableCell>
                 <TableCell align="right">{row.telefone}</TableCell>
-                <TableCell align="right">{row.foto}</TableCell>
-                <TableCell align="right">{row.status}</TableCell>
               </TableRow>
             ))}
           </TableBody>

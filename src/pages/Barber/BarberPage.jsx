@@ -1,24 +1,56 @@
-import React, { useState } from "react";
-import { Autocomplete, TextField } from "@mui/material";
+import React from "react";
 import Navbar from "../../components/Navbar/navbar";
+import { Avatar, Box, Card, CardContent, Typography} from "@mui/material";
+import BarberAvatar from "../../images/man02.png"
 
-const options = ["Opção 1", "Opção 2"];
+const createCardBarber = (nome, age, sexo, disponibilidade) => {
+  return { nome, age, sexo, disponibilidade }
+}
+const barberCad = [
+  createCardBarber(
+    "Isaac",
+    25,
+    "Masculino",
+    "Manhã"
+  ),
 
-export default function AutocompleteSimples() {
-  const [valorSelecionado, setValorSelecionado] = useState(null);
+  createCardBarber(
+    "Paulo",
+    36,
+    "Masculino",
+    "Tarde"
+  )
+]
 
+export default function BarberList() {
   return (
     <>
       <Navbar />
-      <Autocomplete
-        value={valorSelecionado}
-        onChange={(e, novoValor) => setValorSelecionado(novoValor)}
-        options={options}
-        sx={{ width: 300 }}
-        renderInput={(params) => (
-          <TextField {...params} label="Escolha uma opção" />
-        )}
-      />
+      <Box
+        display="flex"
+        justifyContent="center"
+        gap={2}
+        flexWrap="wrap"
+        p={2}
+      >
+        {barberCad.map((barber, index) => {
+          return (
+            <Card key={index} sx={{ backgroundColor: "red",paddingTop:"30px", width: "230px" , height:"290px"}}>
+              <Avatar
+                src={BarberAvatar}
+                style={{ width: "150px", height: "150px", margin: "auto" }}
+              />
+              <CardContent sx={{ textAlign: "center" }}>
+                <Typography key={index}>
+                  Nome: {barber.nome} <br />
+                  Idade: {barber.age} <br />
+                  Disponibilidade: {barber.disponibilidade}<br />
+                </Typography>
+              </CardContent>
+            </Card>
+          )
+        })}
+      </Box >
     </>
-  );
+  )
 }

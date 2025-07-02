@@ -6,9 +6,9 @@ export default function UserInfo() {
   const horarios = new Date().getHours();
   let saudacao = "";
 
-  if (horarios === 0 || horarios <= 12) {
+  if (horarios >= 0 && horarios <= 12) {
     saudacao = "Bom dia";
-  } else if (horarios >= 12 || horarios <= 18) {
+  } else if (horarios >= 12 && horarios < 18) {
     saudacao = "Boa tarde";
   } else {
     saudacao = "Boa noite";
