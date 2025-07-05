@@ -15,10 +15,6 @@ import br.com.barbearia.repository.UsuarioRepository;
 @Service
 public record UsuarioService(UsuarioRepository usuarioRepository) {
 
-	//public UsuarioModel salvar(UsuarioModel usuarioModel) {
-		//return usuarioRepository.save(usuarioModel);
-	//}
-	
 	public ResponseEntity<String> cadastrar(CadastroDTO dto) {
 		if (usuarioRepository.existsByNome(dto.getNome())) {
 			return ResponseEntity.status(HttpStatus.CONFLICT).body("Usuário já existe.");

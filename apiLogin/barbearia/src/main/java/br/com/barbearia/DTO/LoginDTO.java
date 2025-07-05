@@ -2,8 +2,8 @@ package br.com.barbearia.DTO;
 
 public class LoginDTO {
 	
-	public String nome;
-	public String senha;
+	private String nome;
+	private String senha;
 	
 	public String getNome() {
 		return nome;

@@ -8,25 +8,30 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "usuario_login")
 public class UsuarioModel {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(unique = true)
+	@Column(name = "nome", unique = true)
 	public String nome;
 	
-	@Column(unique = true)
+	@Column(name = "email", unique = true)
 	public String email;
 	
 	@Enumerated(EnumType.STRING)
+	@Column(name = "sexo")
 	public SexoEnum sexo;
 	
+	@Column(name = "cargo")
 	public String cargo;
 	
+	@Column(name = "senha")
 	public String senha;
 	
 	public Long getId() {

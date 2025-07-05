@@ -35,12 +35,12 @@ export default function LoginPage() {
     }
 
     // Envio da requisição com os campos 'usuario' e 'senha'
-    fetch("http://localhost:8080/api/login", {
+    fetch("http://localhost:8080/usuario/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username: user, password: password }), // Mudança: 'username' e 'password'
+      body: JSON.stringify({ nome: user, senha: password }), // Mudança: 'username' e 'password'
     })
       .then((response) => {
 

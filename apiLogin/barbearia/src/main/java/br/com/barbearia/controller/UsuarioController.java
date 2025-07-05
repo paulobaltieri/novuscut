@@ -3,6 +3,7 @@ package br.com.barbearia.controller;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +18,7 @@ import br.com.barbearia.DTO.LoginDTO;
 import br.com.barbearia.model.UsuarioModel;
 import br.com.barbearia.service.UsuarioService;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/usuario")
 public record UsuarioController(UsuarioService usuarioService) {
